@@ -7,131 +7,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>%s</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Delius">
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.12/plyr.css"/>
-    <style>
-        body {
-            font-family: 'Raleway', sans-serif;
-            background-color: #f0f2f5;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
-        marquee {
-            font-size: 24px;
-            color: white;
-            font-family: 'Delius', serif;
-        }
-        .container {
-            padding: 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
-        .player-container {
-            margin-bottom: 30px;
-        }
-        .button-container {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 30px;
-        }
-        .button-container button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            background-color: #4CAF50;
-            color: white;
-            transition: background-color 0.3s ease;
-        }
-        .button-container button:hover {
-            background-color: #45a049;
-        }
-        .info-box {
-            background-color: #fffbeb;
-            border: 1px solid #ffeb3b;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 5px;
-        }
-        .footer {
-            text-align: center;
-            background-color: #333;
-            color: white;
-            padding: 20px 0;
-            margin-top: 30px;
-        }
-        .footer a {
-            color: #ff5722;
-            text-decoration: none;
-        }
-    </style>
+<style>
+    body {
+        font-family: sans-serif;
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+    }
+    marquee {
+        font-size: 22px;
+        color: black;
+        font-family: serif;
+        background-color: #808080;
+    }
+    .container {
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+    .containerbox {
+        overflow: hidden;
+        margin-bottom: 60px;
+    }
+    #info-box {
+        border: 1px solid #140cf0;
+        border-radius: 10px;
+        padding: 5px;
+        margin: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        word-wrap: break-word;
+    }
+    #button-container1, #button-container2 {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 5px;
+    }
+    #button-container1 button, #button-container2 button {
+        flex: 1 0 auto;
+        height: 40px;
+        padding: 0 20px;
+        margin: 5px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: box-shadow 0.3s;
+    }
+    #button-container1 button {
+        background-color: lavender;
+        color: #ffffff;
+    }
+    #button-container2 button {
+        background-color: #2D76FF;
+        color: #ffffff;
+    }
+    #button-container1 button:hover, #button-container2 button:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+</style>
 </head>
 
 <body>
+<div class="container">
     <header>
-        <marquee>%s</marquee>
+        <marquee>
+            <div id="file-name">%s</div>
+        </marquee>
     </header>
+    <tag src="%s" class="player"></tag>
+</div>
 
-    <div class="container">
-        <div class="player-container">
-            <tag src="%s" class="player"></tag>
-        </div>
-
-        <div class="button-container">
-            <button onclick="playOnline()">VLC Player</button>
-            <button onclick="playOnlineMx()">MX Player</button>
-            <button onclick="playOnlinesp()">SPlayer</button>
-            <button onclick="playOnlinepi()">PlayIt</button>
-        </div>
-
-        <div class="button-container">
-            <button onclick="download()">Download Now</button>
-        </div>
-
-        <div class="info-box">
-            <p><strong>Note:</strong> If you find any broken link, please report to my <a href="https://telegram.me/CodeXSupport">Support Team</a>.</p>
-        </div>
+<div class="containerbox"> 
+    <div>𝐒𝐭𝐫𝐞𝐚𝐦 𝐎𝐩𝐭𝐢𝐨𝐧𝐬 :</div>
+    <div id="button-container1">
+        <button id="vlc-btn" onclick="playOnline()">VLC</button>
+        <button id="mx-btn" onclick="playOnlineMx()">MX</button>
     </div>
+    <div id="button-container1">
+        <button id="sp-btn" onclick="playOnlinesp()">SPlayer</button>
+        <button id="pi-btn" onclick="playOnlinepi()">PlayIt</button>
+    </div>
+</div>
 
-    <footer class="footer">
-        <p>&copy; 2024 All Rights Reserved. This website only provides a service for playing videos online without downloading. <a href="https://telegram.me/CodeXBro">Report Issues</a></p>
-    </footer>
+<div class="containerbox"> 
+    <div id="info-box"> 
+        <p><b>𝐍𝐨𝐭𝐞 :</b> ɪꜰ ʏᴏᴜ ꜰɪɴᴅ ᴀɴʏ ʙʀᴏᴋᴇɴ ʟɪɴᴋ ᴛʜᴇɴ ᴘʟᴇᴀsᴇ ʀᴇᴘᴏʀᴛ ᴛᴏ <a href="https://telegram.me/CodeXSupport" style="color: blue"><b>sᴜᴘᴘᴏʀᴛ ᴛᴇᴀᴍ</b></a></p>
+    </div>
+</div>
 
-    <script src="https://cdn.plyr.io/3.6.12/plyr.js"></script>
-    <script>
+<script src="https://cdn.plyr.io/3.6.12/plyr.js"></script>
+<script>
+    function playOnline() {
         const finalUrl = window.location.href.replace("/watch/", "/");
+        window.location.href = `vlc://${finalUrl}`;
+    }
+    function playOnlineMx() {
+        const finalUrl = window.location.href.replace("/watch/", "/");
+        window.location.href = `intent:${finalUrl}#Intent;package=com.mxtech.videoplayer.ad;end`;
+    }
+    function playOnlinesp() {
+        const finalUrl = window.location.href.replace("/watch/", "/");
+        window.location.href = `intent:${finalUrl}#Intent;action=com.young.simple.player.playback_online;package=com.young.simple.player;end`;
+    }
+    function playOnlinepi() {
+        const finalUrl = window.location.href.replace("/watch/", "/");
+        window.location.href = `playit://playerv2/video?url=${finalUrl}`;
+    }
+</script>
 
-        function playOnline() {
-            window.location.href = `vlc://${finalUrl}`;
-        }
-
-        function playOnlineMx() {
-            window.location.href = `intent:${finalUrl}#Intent;package=com.mxtech.videoplayer.ad;end`;
-        }
-
-        function playOnlinesp() {
-            window.location.href = `intent:${finalUrl}#Intent;action=com.young.simple.player.playback_online;package=com.young.simple.player;end`;
-        }
-
-        function playOnlinepi() {
-            window.location.href = `playit://playerv2/video?url=${finalUrl}&title={{file_name}}`;
-        }
-
-        function download() {
-            window.location.href = finalUrl;
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            Plyr.setup('.player', { controls: ['play-large', 'play', 'progress', 'current-time', 'fullscreen'] });
-        });
-    </script>
+<footer>
+    <p>This website helps you play your videos online. Report issues to <a href="https://telegram.me/CodeXBro" style="color: red"><b>Report</b></a>.</p>
+    <p>&copy; 2024 All Rights Reserved</p>
+</footer>
 </body>
 </html>
